@@ -17,7 +17,7 @@ class PageController extends Controller
             'username' => 'required|min:3',
         ]);
 
-        // username dikirim ke dashboard lewat parameter di URL
+
         return redirect()->route('dashboard', ['username' => $request->username]);
     }
 
@@ -34,7 +34,7 @@ class PageController extends Controller
             ['label' => 'Total Hadiah', 'value' => 'Rp 5.000.000'],
         ];
 
-        // ambil 3 match pertama saja untuk ditampilkan di dashboard
+
         $upcoming = array_slice($this->getMatches(), 0, 3);
 
         return view('dashboard', [
@@ -88,7 +88,7 @@ class PageController extends Controller
         ]);
     }
 
-    // data match dipakai di dashboard dan pengelolaan
+
     private function getMatches()
     {
         return [
